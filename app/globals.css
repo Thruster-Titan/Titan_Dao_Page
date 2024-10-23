@@ -1,0 +1,519 @@
+:root {
+  --color01: #ff4337;
+  --color02: #ff9a82;
+  --color03: #1c1a19;
+  --color04: #c7bebc;
+  --color05: #ffffff;
+  --bgcolor: #0b0a0a;
+
+  --drop-shadow: (0px 0px 4px hsla(3, 67%, 70%, 0.5));
+  /* Gradient --gradient: linear-gradient(20deg, #fbf7f7 -39.19%, #ff4337 140.57%);-*/
+
+  --title1: 60px;
+  --title2: 35px;
+  --title3: 28px;
+  --paragraph: 18px;
+  --button: 16px;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bgcolor);
+  color: var(--color05);
+  font-family: var(--font-space-grotesk);
+  background-image: url(/bg-grain.png);
+  background-repeat: repeat;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  overflow: hidden;
+  background-image: url("/bottom_landscape.webp");
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  background-position: center bottom;
+}
+
+/*---Spline Animation---*/
+
+.spline-container {
+  position: relative;
+  width: 800px;
+  height: 800px;
+  z-index: 1;
+}
+
+.spline-bg {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  opacity: 0;
+  animation: fade 4s ease-out forwards;
+}
+
+.left-anim {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.left-anim {
+  top: -50px;
+  left: -50px;
+}
+
+.right-anim {
+  top: -50px;
+  right: -50px;
+}
+
+/*---Element---*/
+
+.bg-line {
+  z-index: 3;
+  position: absolute;
+  left: 42%;
+  top: -1250px;
+  transform: translateX(-60%);
+  rotate: -45deg;
+}
+
+/*---Re usable CSS---*/
+
+.burial {
+  font-family: var(--font-burial);
+}
+
+.grotesk-regular,
+.grotesk-medium,
+.grotesk-bold {
+  font-family: var(--font-space-grotesk);
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.gradient-text {
+  background: linear-gradient(256deg, #fbf7f7 -39.19%, #ff4337 140.57%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 0px 4px hsla(3, 67%, 70%, 0.5));
+}
+
+.gradient-text-strokes {
+  -webkit-text-fill-color: #000;
+  -webkit-text-stroke: 3px transparent;
+  background-clip: text;
+  background: linear-gradient(314deg, #ffd7d6 -6.6%, #ff8580 102.09%);
+  -webkit-background-clip: text;
+}
+
+.maintitle {
+  font-size: var(--title1);
+}
+
+.sectiontitle {
+  font-size: var(--title2);
+}
+
+.max-940 {
+  max-width: 940px;
+}
+.z-5 {
+  z-index: 5;
+}
+
+.main-button {
+  background: url("/grain-button.png") 0 0/40px 40px repeat,
+    linear-gradient(135deg, #ffb6b4 0%, #ff8882 49.48%, #fe6c63 100%)
+      padding-box,
+    linear-gradient(135deg, #ff4337 0%, #ff6d63 46.35%, #ffb0ab 100%) border-box;
+  background-repeat: repeat;
+  background-blend-mode: overlay, normal;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #fff;
+  box-shadow: 0 0 2px 0 #ff6157;
+  font-size: var(--button);
+  padding: 6px 40px;
+}
+
+.disabled-btn {
+  background: url("/grain-button.png") 0 0/40px 40px repeat,
+    linear-gradient(135deg, #cccccc 0%, #bbbbbb 49.48%, #aaaaaa 100%)
+      padding-box,
+    linear-gradient(135deg, #999999 0%, #bbbbbb 46.35%, #dddddd 100%) border-box;
+  background-repeat: repeat;
+  background-blend-mode: overlay, normal;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #ffffff;
+  box-shadow: none;
+  font-size: var(--button);
+  padding: 6px 40px;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.main-button:hover {
+  opacity: 84%;
+  box-shadow: 0 0 5px 0 #ff6157;
+}
+
+.gap-20 {
+  gap: 20px;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.copyright {
+  opacity: 0.5;
+  margin-left: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*---First Section---*/
+
+.logo-font {
+  font-size: 20px;
+}
+
+.section-intro {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.intro-container {
+  position: absolute;
+  z-index: 5;
+  height: 100vh;
+  width: 100vw;
+}
+
+.intro-text-container {
+  text-align: center;
+  max-width: 800px;
+  text-wrap: pretty;
+  gap: 10px;
+  opacity: 0;
+  animation: fade 1s ease-out forwards;
+}
+
+.sub-text {
+  gap: 30px;
+  p {
+    max-width: 650px;
+    font-size: var(--paragraph);
+  }
+}
+
+/*----Second-section----*/
+
+.features-section {
+  text-align: center;
+  padding: 3rem 0;
+  height: 90vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.features-content-container {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+}
+
+.grid-container {
+  margin-top: 100px;
+}
+
+.grid-feature {
+  display: grid;
+  max-width: 1000px;
+  grid-template-columns: repeat(4, 200px);
+  gap: 40px;
+  margin-top: 40px;
+  margin-left: 20px;
+}
+
+.grid-child {
+  text-align: left;
+  gap: 10px;
+}
+
+.landscape-bg {
+  position: absolute;
+  bottom: -90px;
+  z-index: 1;
+  img {
+    width: 100vw;
+  }
+}
+
+.orbit-ring {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (max-width: 1300px) {
+  .left-anim {
+    left: -150px;
+  }
+
+  .right-anim {
+    right: -150px;
+  }
+}
+/*---Section III---*/
+
+.about-section {
+  text-align: center;
+  padding: 3rem 0 5rem 0;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
+}
+
+.warphole {
+  rotate: 132deg;
+  position: absolute;
+  z-index: 1;
+  top: -100px;
+  opacity: 0.5;
+}
+
+.board-container {
+  box-shadow: 0 0 2px 0 #ff6157;
+  padding: 30px;
+  border-radius: 40px;
+  background-color: var(--bgcolor);
+  background-image: url(/bg-grain.png);
+  background-repeat: repeat;
+}
+
+.round-icon {
+  box-shadow: 0 0 2px 0 #ff6157;
+  height: 150px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 50%;
+  animation: pulse-box-shadow 3s infinite ease-in-out;
+}
+@keyframes pulse-box-shadow {
+  0%,
+  100% {
+    box-shadow: 0 0 2px 0 #ff6157;
+  }
+  50% {
+    box-shadow: 0 0 8px 0 #ff6157;
+  }
+}
+
+.round-icon:nth-child(1) {
+  animation-delay: 0s;
+  animation-duration: 1.5s;
+}
+
+.round-icon:nth-child(2) {
+  animation-delay: 1.5s;
+  animation-duration: 1.5s;
+}
+
+.round-icon:nth-child(3) {
+  animation-delay: 3s;
+  animation-duration: 1.5s;
+}
+
+.round-icon:nth-child(4) {
+  animation-delay: 4.5s;
+  animation-duration: 1.5s;
+}
+
+.icon-field-container {
+  gap: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.steptitle {
+  font-size: 22px;
+  font-weight: 200;
+}
+
+.join-section {
+  gap: 20px;
+}
+
+.about-thruster {
+  margin-top: 100px;
+  gap: 30px;
+  margin-bottom: 100px;
+}
+/*---Footer---*/
+
+footer {
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+  height: 10vh;
+}
+
+.footer-container {
+  justify-content: space-between;
+  padding: 0 5rem 3rem 5rem;
+  align-items: center;
+}
+
+.nav-container {
+  gap: 10px;
+}
+
+@media (max-width: 990px) {
+  :root {
+    --title1: 30px;
+    --title2: 35px;
+    --title3: 28px;
+    --paragraph: 16px;
+    --button: 16px;
+  }
+
+  .spline-bg {
+    display: none;
+  }
+
+  .logo-font {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .sub-text {
+    padding: 0 2rem;
+  }
+
+  .main-button {
+    white-space: nowrap;
+  }
+
+  .btn-container {
+    flex-direction: column;
+  }
+
+  .features-section {
+    height: 1200px;
+  }
+
+  .grid-feature {
+    grid-template-columns: repeat(1, 250px);
+    margin-left: 0;
+  }
+  .footer-container {
+    flex-direction: column-reverse;
+
+    justify-content: center;
+    align-items: center;
+    .copyright {
+      margin-left: 0;
+      text-align: center;
+    }
+  }
+  footer {
+    height: 180px;
+  }
+  .footer-right-container {
+    flex-direction: column-reverse;
+    .nav-container {
+      flex-direction: column;
+    }
+  }
+
+  .logo-container {
+    margin-left: -20px;
+  }
+
+  main {
+    background-image: none;
+  }
+
+  .p-mobile {
+    padding: 0 2rem;
+  }
+
+  .about-section {
+    gap: 80px;
+  }
+
+  .warphole {
+    top: 50px;
+    img {
+      width: 400px;
+    }
+  }
+
+  .about-thruster {
+    margin-bottom: 30px;
+    margin-top: 40px;
+  }
+
+  .icon-field-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .steptitle {
+    padding: 0 2rem;
+    font-size: 16px;
+  }
+}
